@@ -1,0 +1,36 @@
+==> WARNING: BootstrapExpect Mode is specified as 1; this is the same as Bootstrap mode.
+==> WARNING: Bootstrap mode enabled! Do not enable unless necessary
+==> Starting Consul agent...
+==> Starting Consul agent RPC...
+==> Consul agent running!
+           Version: 'v0.7.1'
+         Node name: 'gyuho'
+        Datacenter: 'dc1'
+            Server: true (bootstrap: true)
+       Client Addr: 127.0.0.1 (HTTP: 8500, HTTPS: -1, DNS: 8600, RPC: 8400)
+      Cluster Addr: 127.0.0.1 (LAN: 8301, WAN: 8302)
+    Gossip encrypt: false, RPC-TLS: false, TLS-Incoming: false
+             Atlas: <disabled>
+
+==> Log data will now stream in as it occurs:
+
+    2016/11/29 15:32:22 [INFO] raft: Initial configuration (index=1): [{Suffrage:Voter ID:127.0.0.1:8300 Address:127.0.0.1:8300}]
+    2016/11/29 15:32:22 [INFO] raft: Node at 127.0.0.1:8300 [Follower] entering Follower state (Leader: "")
+    2016/11/29 15:32:22 [INFO] serf: EventMemberJoin: gyuho 127.0.0.1
+    2016/11/29 15:32:22 [INFO] consul: Adding LAN server gyuho (Addr: tcp/127.0.0.1:8300) (DC: dc1)
+    2016/11/29 15:32:22 [INFO] serf: EventMemberJoin: gyuho.dc1 127.0.0.1
+    2016/11/29 15:32:22 [INFO] consul: Adding WAN server gyuho.dc1 (Addr: tcp/127.0.0.1:8300) (DC: dc1)
+    2016/11/29 15:32:27 [INFO] agent.rpc: Accepted client: 127.0.0.1:33498
+    2016/11/29 15:32:29 [WARN] raft: Heartbeat timeout from "" reached, starting election
+    2016/11/29 15:32:29 [INFO] raft: Node at 127.0.0.1:8300 [Candidate] entering Candidate state in term 2
+    2016/11/29 15:32:29 [INFO] raft: Election won. Tally: 1
+    2016/11/29 15:32:29 [INFO] raft: Node at 127.0.0.1:8300 [Leader] entering Leader state
+    2016/11/29 15:32:29 [INFO] consul: cluster leadership acquired
+    2016/11/29 15:32:29 [INFO] consul: New leader elected: gyuho
+    2016/11/29 15:32:29 [INFO] consul: member 'gyuho' joined, marking health alive
+    2016/11/29 15:32:29 [INFO] agent: Synced service 'consul'
+    2016/11/29 15:36:04 [INFO] consul.fsm: snapshot created in 59.38µs
+    2016/11/29 15:36:04 [INFO] raft: Starting snapshot up to 623154
+    2016/11/29 15:36:04 [INFO] snapshot: Creating new snapshot at /tmp/data.consul/raft/snapshots/2-623154-1480462564394.tmp
+    2016/11/29 15:36:06 [INFO] raft: Compacting logs from 1 to 623154
+    2016/11/29 15:36:07 [INFO] raft: Snapshot to 623154 complete

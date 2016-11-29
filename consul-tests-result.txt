@@ -1,0 +1,6 @@
+Total clients: 1000
+Total requests: 1000000
+Average: 209.200555ms
+Min: 16.041965ms
+Max: 1.337900054s
+No error!
