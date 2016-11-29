@@ -44,9 +44,9 @@ func main() {
 	results := make(chan result, writesN)
 	donec, errm := make(chan struct{}), make(map[string]int)
 	total, min, max := time.Duration(0), time.Duration(0), time.Duration(0)
-	cnt := 0
 	go func() {
 		defer close(donec)
+		cnt := 0
 		for rs := range results {
 			if cnt%500 == 0 {
 				fmt.Println("success", cnt, "/", writesN)
