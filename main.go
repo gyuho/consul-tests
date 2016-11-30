@@ -4,6 +4,8 @@ import (
 	"flag"
 	"fmt"
 	mrand "math/rand"
+	"os"
+	"sort"
 	"strings"
 	"sync"
 	"time"
@@ -41,28 +43,30 @@ func main() {
 		}
 	}()
 
-	results := make(chan result, writesN)
+	rs := make(chan result, writesN)
+	points := make([]result, 0, writesN)
 	donec, errm := make(chan struct{}), make(map[string]int)
 	total, min, max := time.Duration(0), time.Duration(0), time.Duration(0)
 	go func() {
 		defer close(donec)
 		cnt := 0
-		for rs := range results {
+		for r := range rs {
+			points = append(points, r)
 			if cnt%500 == 0 {
 				fmt.Println("success", cnt, "/", writesN)
 			}
-			if rs.errStr != "" {
-				errm[rs.errStr]++
+			if r.errStr != "" {
+				errm[r.errStr]++
 			}
-			total += rs.duration
+			total += r.duration
 			if min == time.Duration(0) {
-				min = rs.duration
+				min = r.duration
 			}
-			if min > rs.duration {
-				min = rs.duration
+			if min > r.duration {
+				min = r.duration
 			}
-			if max < rs.duration {
-				max = rs.duration
+			if max < r.duration {
+				max = r.duration
 			}
 			cnt++
 		}
@@ -81,12 +85,12 @@ func main() {
 				if err != nil {
 					errStr = err.Error()
 				}
-				results <- result{errStr: errStr, duration: reqTook}
+				rs <- result{errStr: errStr, duration: reqTook, ts: reqNow.Unix()}
 			}
 		}(i, conns[i])
 	}
 	wg.Wait()
-	close(results)
+	close(rs)
 	<-donec
 
 	fmt.Println("Total clients:", clientsN)
@@ -102,6 +106,16 @@ func main() {
 		for k, v := range errm {
 			fmt.Println(k, v)
 		}
+	}
+	sort.Sort(results(points))
+
+	f, err := openToOverwrite("result.csv")
+	if err != nil {
+		panic(err)
+	}
+	defer f.Close()
+	for _, p := range points {
+		f.WriteString(fmt.Sprintf("%d, %f\n", p.ts, p.duration.Seconds()))
 	}
 
 	// for i := 0; i < 10; i++ {
@@ -170,4 +184,27 @@ func randBytes(bytesN int) []byte {
 type result struct {
 	errStr   string
 	duration time.Duration
+	ts       int64
+}
+
+type results []result
+
+func (s results) Len() int {
+	return len(s)
+}
+
+func (s results) Less(i, j int) bool {
+	return s[i].ts < s[j].ts
+}
+
+func (s results) Swap(i, j int) {
+	s[i], s[j] = s[j], s[i]
+}
+
+func openToOverwrite(fpath string) (*os.File, error) {
+	f, err := os.OpenFile(fpath, os.O_RDWR|os.O_TRUNC|os.O_CREATE, 0600)
+	if err != nil {
+		return nil, err
+	}
+	return f, nil
 }
