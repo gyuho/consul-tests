@@ -14,23 +14,42 @@
 
 ==> Log data will now stream in as it occurs:
 
-    2016/11/29 15:32:22 [INFO] raft: Initial configuration (index=1): [{Suffrage:Voter ID:127.0.0.1:8300 Address:127.0.0.1:8300}]
-    2016/11/29 15:32:22 [INFO] raft: Node at 127.0.0.1:8300 [Follower] entering Follower state (Leader: "")
-    2016/11/29 15:32:22 [INFO] serf: EventMemberJoin: gyuho 127.0.0.1
-    2016/11/29 15:32:22 [INFO] consul: Adding LAN server gyuho (Addr: tcp/127.0.0.1:8300) (DC: dc1)
-    2016/11/29 15:32:22 [INFO] serf: EventMemberJoin: gyuho.dc1 127.0.0.1
-    2016/11/29 15:32:22 [INFO] consul: Adding WAN server gyuho.dc1 (Addr: tcp/127.0.0.1:8300) (DC: dc1)
-    2016/11/29 15:32:27 [INFO] agent.rpc: Accepted client: 127.0.0.1:33498
-    2016/11/29 15:32:29 [WARN] raft: Heartbeat timeout from "" reached, starting election
-    2016/11/29 15:32:29 [INFO] raft: Node at 127.0.0.1:8300 [Candidate] entering Candidate state in term 2
-    2016/11/29 15:32:29 [INFO] raft: Election won. Tally: 1
-    2016/11/29 15:32:29 [INFO] raft: Node at 127.0.0.1:8300 [Leader] entering Leader state
-    2016/11/29 15:32:29 [INFO] consul: cluster leadership acquired
-    2016/11/29 15:32:29 [INFO] consul: New leader elected: gyuho
-    2016/11/29 15:32:29 [INFO] consul: member 'gyuho' joined, marking health alive
-    2016/11/29 15:32:29 [INFO] agent: Synced service 'consul'
-    2016/11/29 15:36:04 [INFO] consul.fsm: snapshot created in 59.38µs
-    2016/11/29 15:36:04 [INFO] raft: Starting snapshot up to 623154
-    2016/11/29 15:36:04 [INFO] snapshot: Creating new snapshot at /tmp/data.consul/raft/snapshots/2-623154-1480462564394.tmp
-    2016/11/29 15:36:06 [INFO] raft: Compacting logs from 1 to 623154
-    2016/11/29 15:36:07 [INFO] raft: Snapshot to 623154 complete
+    2016/11/30 00:28:22 [INFO] raft: Initial configuration (index=1): [{Suffrage:Voter ID:127.0.0.1:8300 Address:127.0.0.1:8300}]
+    2016/11/30 00:28:22 [INFO] raft: Node at 127.0.0.1:8300 [Follower] entering Follower state (Leader: "")
+    2016/11/30 00:28:22 [INFO] serf: EventMemberJoin: gyuho 127.0.0.1
+    2016/11/30 00:28:22 [INFO] consul: Adding LAN server gyuho (Addr: tcp/127.0.0.1:8300) (DC: dc1)
+    2016/11/30 00:28:22 [INFO] serf: EventMemberJoin: gyuho.dc1 127.0.0.1
+    2016/11/30 00:28:22 [INFO] consul: Adding WAN server gyuho.dc1 (Addr: tcp/127.0.0.1:8300) (DC: dc1)
+    2016/11/30 00:28:26 [INFO] agent.rpc: Accepted client: 127.0.0.1:59240
+    2016/11/30 00:28:29 [ERR] agent: failed to sync remote state: No cluster leader
+    2016/11/30 00:28:30 [WARN] raft: Heartbeat timeout from "" reached, starting election
+    2016/11/30 00:28:30 [INFO] raft: Node at 127.0.0.1:8300 [Candidate] entering Candidate state in term 2
+    2016/11/30 00:28:30 [INFO] raft: Election won. Tally: 1
+    2016/11/30 00:28:30 [INFO] raft: Node at 127.0.0.1:8300 [Leader] entering Leader state
+    2016/11/30 00:28:30 [INFO] consul: cluster leadership acquired
+    2016/11/30 00:28:30 [INFO] consul: New leader elected: gyuho
+    2016/11/30 00:28:30 [INFO] consul: member 'gyuho' joined, marking health alive
+    2016/11/30 00:28:32 [INFO] agent: Synced service 'consul'
+    2016/11/30 00:31:05 [INFO] consul.fsm: snapshot created in 992.312µs
+    2016/11/30 00:31:05 [INFO] raft: Starting snapshot up to 1058750
+    2016/11/30 00:31:05 [INFO] snapshot: Creating new snapshot at data.consul/raft/snapshots/2-1058750-1480494665629.tmp
+    2016/11/30 00:31:10 [INFO] raft: Compacting logs from 1 to 1058750
+    2016/11/30 00:31:12 [INFO] raft: Snapshot to 1058750 complete
+    2016/11/30 00:33:21 [INFO] consul.fsm: snapshot created in 65.278µs
+    2016/11/30 00:33:21 [INFO] raft: Starting snapshot up to 1429275
+    2016/11/30 00:33:21 [INFO] snapshot: Creating new snapshot at data.consul/raft/snapshots/2-1429275-1480494801646.tmp
+    2016/11/30 00:33:28 [INFO] raft: Compacting logs from 1058751 to 1429275
+    2016/11/30 00:33:28 [INFO] raft: Snapshot to 1429275 complete
+    2016/11/30 00:36:44 [INFO] consul.fsm: snapshot created in 57.96µs
+    2016/11/30 00:36:44 [INFO] raft: Starting snapshot up to 1951810
+    2016/11/30 00:36:44 [INFO] snapshot: Creating new snapshot at data.consul/raft/snapshots/2-1951810-1480495004816.tmp
+    2016/11/30 00:36:53 [INFO] snapshot: reaping snapshot data.consul/raft/snapshots/2-1058750-1480494665629
+    2016/11/30 00:36:53 [INFO] raft: Compacting logs from 1429276 to 1951810
+    2016/11/30 00:36:53 [INFO] raft: Snapshot to 1951810 complete
+==> Caught signal: interrupt
+    2016/11/30 00:38:45 [INFO] agent: requesting shutdown
+    2016/11/30 00:38:45 [INFO] consul: shutting down server
+    2016/11/30 00:38:45 [WARN] serf: Shutdown without a Leave
+    2016/11/30 00:38:45 [ERR] dns: error starting tcp server: accept tcp 127.0.0.1:8600: use of closed network connection
+    2016/11/30 00:38:45 [WARN] serf: Shutdown without a Leave
+    2016/11/30 00:38:45 [INFO] agent: shutdown complete
