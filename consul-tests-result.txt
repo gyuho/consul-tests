@@ -5,3 +5,11 @@ Min: 22.000123ms
 Max: 1.387757211s
 No error!
 
+# Consul master branch
+Total clients: 1000
+Total requests: 2000000
+Average: 151.422307ms
+Min: 16.446737ms
+Max: 1.418623754s
+No error!
+
