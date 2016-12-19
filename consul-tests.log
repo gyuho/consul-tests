@@ -190,3 +190,14 @@
     2016/12/13 09:47:11 [INFO] snapshot: reaping snapshot data.consul/raft/snapshots/2-1843435-1481651194227
     2016/12/13 09:47:11 [INFO] raft: Compacting logs from 1945941 to 1989786
     2016/12/13 09:47:11 [INFO] raft: Snapshot to 2000025 complete
+==> Caught signal: hangup
+==> Reloading configuration...
+==> WARNING: BootstrapExpect Mode is specified as 1; this is the same as Bootstrap mode.
+==> WARNING: Bootstrap mode enabled! Do not enable unless necessary
+==> Caught signal: terminated
+    2016/12/13 15:51:19 [INFO] agent: requesting shutdown
+    2016/12/13 15:51:19 [INFO] consul: shutting down server
+    2016/12/13 15:51:19 [WARN] serf: Shutdown without a Leave
+    2016/12/13 15:51:19 [ERR] dns: error starting tcp server: accept tcp 127.0.0.1:8600: use of closed network connection
+    2016/12/13 15:51:19 [WARN] serf: Shutdown without a Leave
+    2016/12/13 15:51:19 [INFO] agent: shutdown complete
