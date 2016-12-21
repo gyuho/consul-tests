@@ -3,7 +3,7 @@ set -e
 
 echo "Downloading Consul..."
 rm -f /tmp/consul.zip
-curl -sf -o /tmp/consul.zip https://releases.hashicorp.com/consul/0.7.1/consul_0.7.1_linux_amd64.zip
+curl -sf -o /tmp/consul.zip https://releases.hashicorp.com/consul/0.7.2/consul_0.7.2_linux_amd64.zip
 
 printf "\n"
 echo "Extracting Consul..."
