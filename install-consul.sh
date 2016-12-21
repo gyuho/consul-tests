@@ -18,3 +18,4 @@ consul version
 <<COMMENT
 https://github.com/hashicorp/consul/releases
 COMMENT
+

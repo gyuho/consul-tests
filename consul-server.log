@@ -1,0 +1,197 @@
+==> WARNING: BootstrapExpect Mode is specified as 1; this is the same as Bootstrap mode.
+==> WARNING: Bootstrap mode enabled! Do not enable unless necessary
+==> Starting Consul agent...
+==> Starting Consul agent RPC...
+==> Consul agent running!
+           Version: 'v0.7.2'
+         Node name: 'gyuho'
+        Datacenter: 'dc1'
+            Server: true (bootstrap: true)
+       Client Addr: 127.0.0.1 (HTTP: 8500, HTTPS: -1, DNS: 8600, RPC: 8400)
+      Cluster Addr: 127.0.0.1 (LAN: 8301, WAN: 8302)
+    Gossip encrypt: false, RPC-TLS: false, TLS-Incoming: false
+             Atlas: <disabled>
+
+==> Log data will now stream in as it occurs:
+
+    2016/12/21 13:28:10 [INFO] raft: Initial configuration (index=1): [{Suffrage:Voter ID:127.0.0.1:8300 Address:127.0.0.1:8300}]
+    2016/12/21 13:28:10 [INFO] raft: Node at 127.0.0.1:8300 [Follower] entering Follower state (Leader: "")
+    2016/12/21 13:28:10 [INFO] serf: EventMemberJoin: gyuho 127.0.0.1
+    2016/12/21 13:28:10 [INFO] consul: Adding LAN server gyuho (Addr: tcp/127.0.0.1:8300) (DC: dc1)
+    2016/12/21 13:28:10 [INFO] serf: EventMemberJoin: gyuho.dc1 127.0.0.1
+    2016/12/21 13:28:10 [INFO] consul: Adding WAN server gyuho.dc1 (Addr: tcp/127.0.0.1:8300) (DC: dc1)
+    2016/12/21 13:28:15 [INFO] agent.rpc: Accepted client: 127.0.0.1:55088
+    2016/12/21 13:28:16 [WARN] raft: Heartbeat timeout from "" reached, starting election
+    2016/12/21 13:28:16 [INFO] raft: Node at 127.0.0.1:8300 [Candidate] entering Candidate state in term 2
+    2016/12/21 13:28:16 [INFO] raft: Election won. Tally: 1
+    2016/12/21 13:28:16 [INFO] raft: Node at 127.0.0.1:8300 [Leader] entering Leader state
+    2016/12/21 13:28:16 [INFO] consul: cluster leadership acquired
+    2016/12/21 13:28:16 [INFO] consul: New leader elected: gyuho
+    2016/12/21 13:28:16 [INFO] consul: member 'gyuho' joined, marking health alive
+    2016/12/21 13:28:16 [INFO] agent: Synced service 'consul'
+    2016/12/21 13:28:47 [INFO] consul.fsm: snapshot created in 19.937µs
+    2016/12/21 13:28:47 [INFO] raft: Starting snapshot up to 13408
+    2016/12/21 13:28:47 [INFO] snapshot: Creating new snapshot at data.consul/raft/snapshots/2-13408-1482355727145.tmp
+    2016/12/21 13:28:47 [INFO] raft: Compacting logs from 1 to 3948
+    2016/12/21 13:28:47 [INFO] raft: Snapshot to 13408 complete
+    2016/12/21 13:28:55 [INFO] consul.fsm: snapshot created in 51.307µs
+    2016/12/21 13:28:55 [INFO] raft: Starting snapshot up to 72784
+    2016/12/21 13:28:55 [INFO] snapshot: Creating new snapshot at data.consul/raft/snapshots/2-72784-1482355735766.tmp
+    2016/12/21 13:28:56 [INFO] raft: Compacting logs from 3949 to 65698
+    2016/12/21 13:28:56 [INFO] raft: Snapshot to 72784 complete
+    2016/12/21 13:29:05 [INFO] consul.fsm: snapshot created in 34.037µs
+    2016/12/21 13:29:05 [INFO] raft: Starting snapshot up to 130268
+    2016/12/21 13:29:05 [INFO] snapshot: Creating new snapshot at data.consul/raft/snapshots/2-130268-1482355745185.tmp
+    2016/12/21 13:29:05 [INFO] snapshot: reaping snapshot data.consul/raft/snapshots/2-13408-1482355727145
+    2016/12/21 13:29:05 [INFO] raft: Compacting logs from 65699 to 125813
+    2016/12/21 13:29:05 [INFO] raft: Snapshot to 130268 complete
+    2016/12/21 13:29:12 [INFO] consul.fsm: snapshot created in 44.324µs
+    2016/12/21 13:29:12 [INFO] raft: Starting snapshot up to 182203
+    2016/12/21 13:29:12 [INFO] snapshot: Creating new snapshot at data.consul/raft/snapshots/2-182203-1482355752664.tmp
+    2016/12/21 13:29:13 [INFO] snapshot: reaping snapshot data.consul/raft/snapshots/2-72784-1482355735766
+    2016/12/21 13:29:13 [INFO] raft: Compacting logs from 125814 to 179893
+    2016/12/21 13:29:13 [INFO] raft: Snapshot to 182203 complete
+    2016/12/21 13:29:19 [INFO] consul.fsm: snapshot created in 19.391µs
+    2016/12/21 13:29:19 [INFO] raft: Starting snapshot up to 224063
+    2016/12/21 13:29:19 [INFO] snapshot: Creating new snapshot at data.consul/raft/snapshots/2-224063-1482355759178.tmp
+    2016/12/21 13:29:20 [INFO] snapshot: reaping snapshot data.consul/raft/snapshots/2-130268-1482355745185
+    2016/12/21 13:29:20 [INFO] raft: Compacting logs from 179894 to 223768
+    2016/12/21 13:29:20 [INFO] raft: Snapshot to 224063 complete
+    2016/12/21 13:29:28 [INFO] consul.fsm: snapshot created in 56.943µs
+    2016/12/21 13:29:28 [INFO] raft: Starting snapshot up to 288677
+    2016/12/21 13:29:28 [INFO] snapshot: Creating new snapshot at data.consul/raft/snapshots/2-288677-1482355768815.tmp
+    2016/12/21 13:29:30 [INFO] snapshot: reaping snapshot data.consul/raft/snapshots/2-182203-1482355752664
+    2016/12/21 13:29:30 [INFO] raft: Compacting logs from 223769 to 288677
+    2016/12/21 13:29:30 [INFO] raft: Snapshot to 288677 complete
+    2016/12/21 13:29:37 [INFO] consul.fsm: snapshot created in 50.054µs
+    2016/12/21 13:29:37 [INFO] raft: Starting snapshot up to 345427
+    2016/12/21 13:29:37 [INFO] snapshot: Creating new snapshot at data.consul/raft/snapshots/2-345427-1482355777706.tmp
+    2016/12/21 13:29:39 [INFO] snapshot: reaping snapshot data.consul/raft/snapshots/2-224063-1482355759178
+    2016/12/21 13:29:39 [INFO] raft: Compacting logs from 288678 to 345427
+    2016/12/21 13:29:39 [INFO] raft: Snapshot to 345427 complete
+    2016/12/21 13:29:47 [INFO] consul.fsm: snapshot created in 30.958µs
+    2016/12/21 13:29:47 [INFO] raft: Starting snapshot up to 409963
+    2016/12/21 13:29:47 [INFO] snapshot: Creating new snapshot at data.consul/raft/snapshots/2-409963-1482355787732.tmp
+    2016/12/21 13:29:49 [INFO] snapshot: reaping snapshot data.consul/raft/snapshots/2-288677-1482355768815
+    2016/12/21 13:29:49 [INFO] raft: Compacting logs from 345428 to 409963
+    2016/12/21 13:29:49 [INFO] raft: Snapshot to 409963 complete
+    2016/12/21 13:29:59 [INFO] consul.fsm: snapshot created in 55.834µs
+    2016/12/21 13:29:59 [INFO] raft: Starting snapshot up to 489512
+    2016/12/21 13:29:59 [INFO] snapshot: Creating new snapshot at data.consul/raft/snapshots/2-489512-1482355799362.tmp
+    2016/12/21 13:30:01 [INFO] snapshot: reaping snapshot data.consul/raft/snapshots/2-345427-1482355777706
+    2016/12/21 13:30:01 [INFO] raft: Compacting logs from 409964 to 489512
+    2016/12/21 13:30:01 [INFO] raft: Snapshot to 489512 complete
+    2016/12/21 13:30:08 [INFO] consul.fsm: snapshot created in 54.515µs
+    2016/12/21 13:30:08 [INFO] raft: Starting snapshot up to 551680
+    2016/12/21 13:30:08 [INFO] snapshot: Creating new snapshot at data.consul/raft/snapshots/2-551680-1482355808775.tmp
+    2016/12/21 13:30:11 [INFO] snapshot: reaping snapshot data.consul/raft/snapshots/2-409963-1482355787732
+    2016/12/21 13:30:11 [INFO] raft: Compacting logs from 489513 to 551680
+    2016/12/21 13:30:11 [INFO] raft: Snapshot to 551680 complete
+    2016/12/21 13:30:17 [INFO] consul.fsm: snapshot created in 63.62µs
+    2016/12/21 13:30:17 [INFO] raft: Starting snapshot up to 609448
+    2016/12/21 13:30:17 [INFO] snapshot: Creating new snapshot at data.consul/raft/snapshots/2-609448-1482355817815.tmp
+    2016/12/21 13:30:20 [INFO] snapshot: reaping snapshot data.consul/raft/snapshots/2-489512-1482355799362
+    2016/12/21 13:30:20 [INFO] raft: Compacting logs from 551681 to 609448
+    2016/12/21 13:30:20 [INFO] raft: Snapshot to 609448 complete
+    2016/12/21 13:30:29 [INFO] consul.fsm: snapshot created in 44.545µs
+    2016/12/21 13:30:29 [INFO] raft: Starting snapshot up to 682963
+    2016/12/21 13:30:29 [INFO] snapshot: Creating new snapshot at data.consul/raft/snapshots/2-682963-1482355829036.tmp
+    2016/12/21 13:30:32 [INFO] snapshot: reaping snapshot data.consul/raft/snapshots/2-551680-1482355808775
+    2016/12/21 13:30:32 [INFO] raft: Compacting logs from 609449 to 682963
+    2016/12/21 13:30:32 [INFO] raft: Snapshot to 682963 complete
+    2016/12/21 13:30:38 [INFO] consul.fsm: snapshot created in 37.597µs
+    2016/12/21 13:30:38 [INFO] raft: Starting snapshot up to 747668
+    2016/12/21 13:30:38 [INFO] snapshot: Creating new snapshot at data.consul/raft/snapshots/2-747668-1482355838362.tmp
+    2016/12/21 13:30:41 [INFO] snapshot: reaping snapshot data.consul/raft/snapshots/2-609448-1482355817815
+    2016/12/21 13:30:41 [INFO] raft: Compacting logs from 682964 to 747668
+    2016/12/21 13:30:41 [INFO] raft: Snapshot to 747668 complete
+    2016/12/21 13:30:47 [INFO] consul.fsm: snapshot created in 46.422µs
+    2016/12/21 13:30:47 [INFO] raft: Starting snapshot up to 810558
+    2016/12/21 13:30:47 [INFO] snapshot: Creating new snapshot at data.consul/raft/snapshots/2-810558-1482355847628.tmp
+    2016/12/21 13:30:50 [INFO] snapshot: reaping snapshot data.consul/raft/snapshots/2-682963-1482355829036
+    2016/12/21 13:30:51 [INFO] raft: Compacting logs from 747669 to 810558
+    2016/12/21 13:30:51 [INFO] raft: Snapshot to 810558 complete
+    2016/12/21 13:30:59 [INFO] consul.fsm: snapshot created in 50.812µs
+    2016/12/21 13:30:59 [INFO] raft: Starting snapshot up to 894288
+    2016/12/21 13:30:59 [INFO] snapshot: Creating new snapshot at data.consul/raft/snapshots/2-894288-1482355859685.tmp
+    2016/12/21 13:31:03 [INFO] snapshot: reaping snapshot data.consul/raft/snapshots/2-747668-1482355838362
+    2016/12/21 13:31:03 [INFO] raft: Compacting logs from 810559 to 894288
+    2016/12/21 13:31:03 [INFO] raft: Snapshot to 894288 complete
+    2016/12/21 13:31:10 [INFO] consul.fsm: snapshot created in 88.255µs
+    2016/12/21 13:31:10 [INFO] raft: Starting snapshot up to 966445
+    2016/12/21 13:31:10 [INFO] snapshot: Creating new snapshot at data.consul/raft/snapshots/2-966445-1482355870092.tmp
+    2016/12/21 13:31:14 [INFO] snapshot: reaping snapshot data.consul/raft/snapshots/2-810558-1482355847628
+    2016/12/21 13:31:14 [INFO] raft: Compacting logs from 894289 to 966445
+    2016/12/21 13:31:14 [INFO] raft: Snapshot to 966445 complete
+    2016/12/21 13:31:22 [INFO] consul.fsm: snapshot created in 51.503µs
+    2016/12/21 13:31:22 [INFO] raft: Starting snapshot up to 1048654
+    2016/12/21 13:31:22 [INFO] snapshot: Creating new snapshot at data.consul/raft/snapshots/2-1048654-1482355882794.tmp
+    2016/12/21 13:31:27 [INFO] snapshot: reaping snapshot data.consul/raft/snapshots/2-894288-1482355859685
+    2016/12/21 13:31:27 [INFO] raft: Compacting logs from 966446 to 1048654
+    2016/12/21 13:31:27 [INFO] raft: Snapshot to 1048654 complete
+    2016/12/21 13:31:33 [INFO] consul.fsm: snapshot created in 47.691µs
+    2016/12/21 13:31:33 [INFO] raft: Starting snapshot up to 1124791
+    2016/12/21 13:31:33 [INFO] snapshot: Creating new snapshot at data.consul/raft/snapshots/2-1124791-1482355893769.tmp
+    2016/12/21 13:31:38 [INFO] snapshot: reaping snapshot data.consul/raft/snapshots/2-966445-1482355870092
+    2016/12/21 13:31:38 [INFO] raft: Compacting logs from 1048655 to 1124791
+    2016/12/21 13:31:38 [INFO] raft: Snapshot to 1124791 complete
+    2016/12/21 13:31:44 [INFO] consul.fsm: snapshot created in 56.588µs
+    2016/12/21 13:31:44 [INFO] raft: Starting snapshot up to 1199583
+    2016/12/21 13:31:44 [INFO] snapshot: Creating new snapshot at data.consul/raft/snapshots/2-1199583-1482355904546.tmp
+    2016/12/21 13:31:49 [INFO] snapshot: reaping snapshot data.consul/raft/snapshots/2-1048654-1482355882794
+    2016/12/21 13:31:49 [INFO] raft: Compacting logs from 1124792 to 1199583
+    2016/12/21 13:31:49 [INFO] raft: Snapshot to 1199583 complete
+    2016/12/21 13:31:57 [INFO] consul.fsm: snapshot created in 53.759µs
+    2016/12/21 13:31:57 [INFO] raft: Starting snapshot up to 1279419
+    2016/12/21 13:31:57 [INFO] snapshot: Creating new snapshot at data.consul/raft/snapshots/2-1279419-1482355917046.tmp
+    2016/12/21 13:32:02 [INFO] snapshot: reaping snapshot data.consul/raft/snapshots/2-1124791-1482355893769
+    2016/12/21 13:32:02 [INFO] raft: Compacting logs from 1199584 to 1279419
+    2016/12/21 13:32:02 [INFO] raft: Snapshot to 1279419 complete
+    2016/12/21 13:32:08 [INFO] consul.fsm: snapshot created in 36.617µs
+    2016/12/21 13:32:08 [INFO] raft: Starting snapshot up to 1360458
+    2016/12/21 13:32:08 [INFO] snapshot: Creating new snapshot at data.consul/raft/snapshots/2-1360458-1482355928503.tmp
+    2016/12/21 13:32:14 [INFO] snapshot: reaping snapshot data.consul/raft/snapshots/2-1199583-1482355904546
+    2016/12/21 13:32:14 [INFO] raft: Compacting logs from 1279420 to 1360458
+    2016/12/21 13:32:14 [INFO] raft: Snapshot to 1360458 complete
+    2016/12/21 13:32:19 [INFO] consul.fsm: snapshot created in 64.954µs
+    2016/12/21 13:32:19 [INFO] raft: Starting snapshot up to 1439368
+    2016/12/21 13:32:19 [INFO] snapshot: Creating new snapshot at data.consul/raft/snapshots/2-1439368-1482355939232.tmp
+    2016/12/21 13:32:25 [INFO] snapshot: reaping snapshot data.consul/raft/snapshots/2-1279419-1482355917046
+    2016/12/21 13:32:25 [INFO] raft: Compacting logs from 1360459 to 1439368
+    2016/12/21 13:32:25 [INFO] raft: Snapshot to 1439368 complete
+    2016/12/21 13:32:34 [INFO] consul.fsm: snapshot created in 44.75µs
+    2016/12/21 13:32:34 [INFO] raft: Starting snapshot up to 1529848
+    2016/12/21 13:32:34 [INFO] snapshot: Creating new snapshot at data.consul/raft/snapshots/2-1529848-1482355954024.tmp
+    2016/12/21 13:32:40 [INFO] snapshot: reaping snapshot data.consul/raft/snapshots/2-1360458-1482355928503
+    2016/12/21 13:32:40 [INFO] raft: Compacting logs from 1439369 to 1529848
+    2016/12/21 13:32:40 [INFO] raft: Snapshot to 1529848 complete
+    2016/12/21 13:32:49 [INFO] consul.fsm: snapshot created in 48.731µs
+    2016/12/21 13:32:49 [INFO] raft: Starting snapshot up to 1639828
+    2016/12/21 13:32:49 [INFO] snapshot: Creating new snapshot at data.consul/raft/snapshots/2-1639828-1482355969642.tmp
+    2016/12/21 13:32:56 [INFO] snapshot: reaping snapshot data.consul/raft/snapshots/2-1439368-1482355939232
+    2016/12/21 13:32:56 [INFO] raft: Compacting logs from 1529849 to 1639828
+    2016/12/21 13:32:56 [INFO] raft: Snapshot to 1639828 complete
+    2016/12/21 13:33:05 [INFO] consul.fsm: snapshot created in 57.009µs
+    2016/12/21 13:33:05 [INFO] raft: Starting snapshot up to 1746233
+    2016/12/21 13:33:05 [INFO] snapshot: Creating new snapshot at data.consul/raft/snapshots/2-1746233-1482355985813.tmp
+    2016/12/21 13:33:13 [INFO] snapshot: reaping snapshot data.consul/raft/snapshots/2-1529848-1482355954024
+    2016/12/21 13:33:13 [INFO] raft: Compacting logs from 1639829 to 1746233
+    2016/12/21 13:33:13 [INFO] raft: Snapshot to 1746233 complete
+    2016/12/21 13:33:18 [INFO] consul.fsm: snapshot created in 70.527µs
+    2016/12/21 13:33:18 [INFO] raft: Starting snapshot up to 1838822
+    2016/12/21 13:33:18 [INFO] snapshot: Creating new snapshot at data.consul/raft/snapshots/2-1838822-1482355998802.tmp
+    2016/12/21 13:33:26 [INFO] snapshot: reaping snapshot data.consul/raft/snapshots/2-1639828-1482355969642
+    2016/12/21 13:33:26 [INFO] raft: Compacting logs from 1746234 to 1838822
+    2016/12/21 13:33:26 [INFO] raft: Snapshot to 1838822 complete
+    2016/12/21 13:33:33 [INFO] consul.fsm: snapshot created in 42.829µs
+    2016/12/21 13:33:33 [INFO] raft: Starting snapshot up to 1928493
+    2016/12/21 13:33:33 [INFO] snapshot: Creating new snapshot at data.consul/raft/snapshots/2-1928493-1482356013441.tmp
+    2016/12/21 13:33:41 [INFO] snapshot: reaping snapshot data.consul/raft/snapshots/2-1746233-1482355985813
+    2016/12/21 13:33:41 [INFO] raft: Compacting logs from 1838823 to 1928493
+    2016/12/21 13:33:41 [INFO] raft: Snapshot to 1928493 complete
+    2016/12/21 13:33:50 [INFO] consul.fsm: snapshot created in 47.105µs
+    2016/12/21 13:33:50 [INFO] raft: Starting snapshot up to 2000025
+    2016/12/21 13:33:50 [INFO] snapshot: Creating new snapshot at data.consul/raft/snapshots/2-2000025-1482356030566.tmp
+    2016/12/21 13:33:57 [INFO] snapshot: reaping snapshot data.consul/raft/snapshots/2-1838822-1482355998802
+    2016/12/21 13:33:57 [INFO] raft: Compacting logs from 1928494 to 1989785
+    2016/12/21 13:33:57 [INFO] raft: Snapshot to 2000025 complete
