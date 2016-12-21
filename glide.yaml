@@ -1,0 +1,6 @@
+package: github.com/gyuho/consul-tests
+import:
+- package: github.com/hashicorp/consul
+  version: 0.7.2
+  subpackages:
+  - api
